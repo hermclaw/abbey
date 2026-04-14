@@ -81,4 +81,4 @@ gem "net-smtp", "0.5.1"
 
 gem "feedjira", "~> 4.0"
 
-gem "faraday-http-cache", "~> 2.5"
+gem "faraday-http-cache", "~> 2.7"
