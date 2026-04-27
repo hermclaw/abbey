@@ -65,6 +65,7 @@ group :test do
   gem "capybara"
   gem "capybara-playwright-driver"
   gem "webmock"
+  gem "database_cleaner-active_record"
 end
 
 gem "tailwindcss-rails", "~> 4.0"

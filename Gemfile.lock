@@ -114,6 +114,10 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    database_cleaner-active_record (2.2.2)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0)
+    database_cleaner-core (2.0.1)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -503,6 +507,7 @@ DEPENDENCIES
   brakeman
   capybara
   capybara-playwright-driver
+  database_cleaner-active_record
   debug
   erb_lint
   faraday-http-cache (~> 2.5)

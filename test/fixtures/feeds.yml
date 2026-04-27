@@ -1,9 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ruby_blog_feed:
+  name: Ruby Blog
+  url: https://rubylang.org/en/news/index.xml
 
-one:
-  name: Test Feed
-  url: http://example.com/feed.xml
-
-two:
-  name: Another Feed
-  url: http://example.com/another.xml
+github_feed:
+  name: GitHub Blog
+  url: https://github.blog/feed/
