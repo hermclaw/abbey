@@ -40,6 +40,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -75,15 +76,18 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
       - name: Run tests
         env:
           RAILS_ENV: test
-          # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+          # REDIS_URL: redis://localhost:***@v5
+        run: bin/rails test
 
-      - name: Keep screenshots from failed system tests
-        uses: actions/upload-artifact@v5
+      - name: Upload screenshots on failure
         if: failure()
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
