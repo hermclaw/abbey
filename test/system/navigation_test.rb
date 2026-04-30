@@ -10,6 +10,9 @@ class NavigationTest < ApplicationSystemTestCase
     visit root_path
 
     assert_link "Home"
+    assert_link "About"
+    assert_link "Projects"
+    assert_link "Presentations"
     assert_link "Links"
     assert_link "Papers"
   end

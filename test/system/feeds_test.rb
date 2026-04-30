@@ -7,4 +7,11 @@ class FeedsTest < ApplicationSystemTestCase
     assert_text "Ruby Blog"
     assert_text "GitHub Blog"
   end
+
+  test "can view feed posts (Read) when logged in" do
+    sign_in_as users(:one)
+    visit feed_posts_path
+    assert_text "Ruby 3.4 Released"
+    assert_text "GitHub Copilot Updates"
+  end
 end

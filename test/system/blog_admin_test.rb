@@ -49,10 +49,19 @@ class BlogAdminTest < ApplicationSystemTestCase
     assert_text "can't be blank"
   end
 
-  test "draft checkbox is visible on post form" do
+  test "draft post is not visible on public homepage" do
     sign_in_as users(:one)
     visit new_post_path
 
-    assert_field "Draft"
+    fill_in "Title", with: "Secret Draft"
+    check "Draft"
+    fill_in "Markdown excerpt", with: "Hidden excerpt."
+    fill_in "Markdown body", with: "Hidden body content."
+    click_button "Create Post"
+
+    click_button "Sign out"
+    visit root_path
+
+    assert_no_text "Secret Draft"
   end
 end
