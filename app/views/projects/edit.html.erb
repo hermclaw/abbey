@@ -1,31 +1,3 @@
-<h1>Edit Project</h1>
-
-<%= form_with(model: @project, url: project_url(@project)) do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
-  <div>
-    <%= form.label :github_url %>
-    <%= form.url_field :github_url %>
-  </div>
-  <div>
-    <%= form.label :license %>
-    <%= form.text_field :license %>
-  </div>
-  <div>
-    <%= form.label :language %>
-    <%= form.text_field :language %>
-  </div>
-  <div>
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Editing Project</h1>
+<%= button_to "Delete", @project, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-6" %>
+<%= render "form", project: @project %>
