@@ -22,6 +22,6 @@ class ProjectTest < ActiveSupport::TestCase
   test "ordered by year descending by default" do
     old = Project.create!(name: "Old", year: 2020)
     recent = Project.create!(name: "Recent", year: 2024)
-    assert_equal [ recent, old ], Project.order(year: :desc)
+    assert_equal [ recent, old ], Project.where(id: [ old.id, recent.id ]).order(year: :desc)
   end
 end
