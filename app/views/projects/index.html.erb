@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+
+<% @projects.each do |project| %>
+  <div>
+    <h2><%= project.name %></h2>
+    <p><%= project.description %></p>
+    <% if project.year %><p><%= project.year %></p><% end %>
+  </div>
+<% end %>

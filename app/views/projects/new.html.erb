@@ -1,0 +1,31 @@
+<h1>New Project</h1>
+
+<%= form_with(model: @project, url: projects_url) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+  <div>
+    <%= form.label :github_url %>
+    <%= form.url_field :github_url %>
+  </div>
+  <div>
+    <%= form.label :license %>
+    <%= form.text_field :license %>
+  </div>
+  <div>
+    <%= form.label :language %>
+    <%= form.text_field :language %>
+  </div>
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
